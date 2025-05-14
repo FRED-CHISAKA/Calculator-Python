@@ -1,0 +1,58 @@
+Activity 1
+
+# Base Class: Superhero
+class Superhero:
+    def __init__(self, name, powers, weaknesses):
+        self.name = name
+        self.powers = powers
+        self.weaknesses = weaknesses
+
+    def use_power(self):
+        print(f"{self.name} is using their powers: {', '.join(self.powers)}!")
+
+    def reveal_weakness(self):
+        print(f"{self.name}'s weakness is: {self.weaknesses}")
+
+# Derived Class: FlyingSuperhero (inherits from Superhero)
+class FlyingSuperhero(Superhero):
+    def __init__(self, name, powers, weaknesses, flying_speed):
+        super().__init__(name, powers, weaknesses)
+        self.flying_speed = flying_speed
+
+    def use_power(self):
+        print(f"{self.name} is soaring through the skies at {self.flying_speed} mph using their powers: {', '.join(self.powers)}!")
+
+# Create a Superhero instance
+hero = Superhero("Spider-Man", ["Web-slinging", "Super strength"], "Lack of sleep")
+hero.use_power()
+hero.reveal_weakness()
+
+# Create a FlyingSuperhero instance
+flying_hero = FlyingSuperhero("Superman", ["Super strength", "Flight", "Laser vision"], "Kryptonite", 500)
+flying_hero.use_power()
+flying_hero.reveal_weakness()
+
+
+Activity 2
+# Base Class: Vehicle
+class Vehicle:
+    def move(self):
+        pass  # This will be overridden by subclasses
+
+# Derived Class: Car
+class Car(Vehicle):
+    def move(self):
+        print("Driving 🚗")
+
+# Derived Class: Plane
+class Plane(Vehicle):
+    def move(self):
+        print("Flying ✈️")
+
+# Create instances of both classes and call the move method
+car = Car()
+plane = Plane()
+
+car.move()  # Output: Driving 🚗
+plane.move()  # Output: Flying ✈️
+
